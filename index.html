@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>JQuery Tutorial #2</title>
+  <title>JQuery Tutorial #3</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
   <style>
     ul li {color: red;}  
@@ -8,14 +8,24 @@
   </style>
   <script>
     $(function(){
-      $('li:last-child').addClass('active'); 
+      $('ul.active').children('li').addClass('active'); 
+      console.log($('li').closest('ul.active'));
     });    
   </script>
 </head>
 <body>
-<ul>
+<ul class="active">
   <li>Hello 1</li>
   <li>Hello 2</li>
+  <li>Hello 3</li>
+  <li>Hello 4</li>
+  <li>
+    <ul> 
+      <li>
+        Hello 3
+      </li> 
+    </ul>
+  </li>
 </ul>
 </body>
 </html>
