@@ -2,15 +2,28 @@
 <head>
   <title>JQuery Tutorial #3</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+  <link rel="stylesheet" href="day.css">
   <style>
     ul li {color: red;}  
     .active {color: green;}
   </style>
   <script>
     $(function(){
-      $('ul.active').children('li').addClass('active'); 
-      console.log($('li').closest('ul.active'));
-    });    
+
+      link=$('link');
+      $('button').first().attr('disabled', 'disabled');
+      $('button').click(
+      function(){
+        $this = $(this);
+        stylesheet = $this.data('css');
+        link.attr('href', stylesheet+'.css');
+        $this
+        .siblings('button')
+        .removeAttr('disabled')
+        .end()
+        .attr('disabled', 'disabled');              
+      }
+    )});    
   </script>
 </head>
 <body>
@@ -25,7 +38,9 @@
         Hello 3
       </li> 
     </ul>
-  </li>
+    </li>
+  <button data-css="day"  >Day</button>
+  <button data-css="night" >Night</button>
 </ul>
 </body>
 </html>
