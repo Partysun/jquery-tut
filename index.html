@@ -1,46 +1,32 @@
 <html>
 <head>
-  <title>JQuery Tutorial #3</title>
+  <title>JQuery Tutorial #5</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
-  <link rel="stylesheet" href="day.css">
-  <style>
-    ul li {color: red;}  
-    .active {color: green;}
-  </style>
+  <link rel="stylesheet" href="style.css">
   <script>
     $(function(){
-
-      link=$('link');
-      $('button').first().attr('disabled', 'disabled');
-      $('button').click(
-      function(){
-        $this = $(this);
-        stylesheet = $this.data('css');
-        link.attr('href', stylesheet+'.css');
-        $this
-        .siblings('button')
-        .removeAttr('disabled')
-        .end()
-        .attr('disabled', 'disabled');              
-      }
-    )});    
+      var dd = $('dd');
+      //dd.filter(':nth-child(n+4)').hide();
+      $('dl').hover(
+        function(){
+          console.log($(this).('nth-child: 2;'));
+          $(this)
+            .slideDown(200);
+        }
+      );      
+    });
   </script>
 </head>
 <body>
-<ul class="active">
-  <li>Hello 1</li>
-  <li>Hello 2</li>
-  <li>Hello 3</li>
-  <li>Hello 4</li>
-  <li>
-    <ul> 
-      <li>
-        Hello 3
-      </li> 
-    </ul>
-    </li>
-  <button data-css="day"  >Day</button>
-  <button data-css="night" >Night</button>
-</ul>
+  <dl>
+    <dt>What are your Hours?</dt>
+    <dd>We are open 24/7.</dd>
+    <dt>What are your Hours?</dt>
+    <dd>We are open 24/7.</dd>
+    <dt>What are your Hours?</dt>
+    <dd>We are open 24/7.</dd>
+    <dt>What are your Hours?</dt>
+    <dd>We are open 24/7.</dd>
+</dl>
 </body>
 </html>
